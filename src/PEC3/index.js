@@ -34,8 +34,12 @@ export default async function init() {
     buttonMatches.addEventListener('click', seleccionarMatches, false);
 
     //MATCHES - CLICK TABLE
-    const targetDivMatches = document.getElementById('matches');
-    targetDivMatches.addEventListener('click', seleccionarTeam, false);
+    //si esta la tabla envio el evento , es decir si ya selecciono el dropdown
+    const tablaMatch = document.getElementById('match');
+    if (tablaMatch) {
+      const targetDivMatches = document.getElementById('matches');
+      targetDivMatches.addEventListener('click', seleccionarTeam, false); //testing
+    }
 
     //STANDINGS TESTING
     const buttonStandings = document.getElementById('buttonStandings');
@@ -51,8 +55,6 @@ export default async function init() {
   }
 
   funScore();
-
-  //MATCHES - CLICK TABLE
 
   ////TEAM DETALLES - STANDINGS  / SCORERS  - CLICK TABLE
   async function seleccionarTeam() {
