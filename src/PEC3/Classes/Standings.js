@@ -45,6 +45,11 @@ export default class Standings {
     //Activo todo el content y sidebar y Oculto Matches
     var targetDivMainContent = document.getElementById('content');
     var contentMatchG = document.getElementById('matchesGeneral');
+    var contentScorers = document.getElementById('scorers');
+
+    if (contentScorers.getAttribute('class') === 'isHidden') {
+      contentScorers.setAttribute('class', 'true');
+    }
 
     if (targetDivMainContent.getAttribute('class') === 'isHidden') {
       targetDivMainContent.setAttribute('class', 'true'); //se cambiara a false porque ya se ha cargado una vez

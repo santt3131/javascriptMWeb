@@ -202,7 +202,8 @@ table.scorers tr:hover,
   border-bottom: 1px solid black;
 }
 
-#content {
+#content,
+#matchesGeneral {
   flex: 1;
   padding-right: 8px;
 }

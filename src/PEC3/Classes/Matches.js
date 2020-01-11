@@ -23,16 +23,18 @@ export default class Matches {
     buttonMatches.setAttribute('class', 'is-active');
     buttonStandings.setAttribute('class', '');
 
-    //Oculto todo el content y sidebar
+    //Oculto todo el content y sidebar (tiene dos : scorers y team)
     var content = document.getElementById('content');
-    var sidebar = document.getElementById('sidebar');
+    //var sidebar = document.getElementById('sidebar');
+    var contentScorers = document.getElementById('scorers');
+
     var contentMatchG = document.getElementById('matchesGeneral');
 
     if (content.getAttribute('class') === 'true') {
       content.setAttribute('class', 'isHidden');
     }
-    if (sidebar.getAttribute('class') === 'true') {
-      sidebar.setAttribute('class', 'isHidden');
+    if (contentScorers.getAttribute('class') === 'true') {
+      contentScorers.setAttribute('class', 'isHidden');
     }
 
     if (contentMatchG.getAttribute('class') === 'isHidden') {
