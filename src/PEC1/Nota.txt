@@ -1,0 +1,14 @@
+No se pedía hacer todos los ejercicios como clase, solo la 94 incorporando la 10, 11 y 12
+Kata1: ok
+Kata2: ok
+Kata3: ok
+Kata4: ok
+Kata5: ok
+Kata6: parcialmente correcto
+Kata7: ok
+Kata8: en la 8.2 se esperaba devolver fruta no objectoArbol.obtenerFruta() (en ningun momento comprobamos que ese metodo exista en el if)
+Kata9: la definición de objetos en linea es mucho mejor que new Object(), la implementación del objeto en la 92 > 91
+Kata10: this.toString() es innecesario this siempre será un String ya que es un método de esa nativa
+Kata11: ok
+Kata12: no se usan regexp
+Kata13: no se entrega como se pidió pero se valora el esfuerzo de convertirlo todo a clase (aunque en muchos casos no es una buena solución, todo eran funciones, no clases)
