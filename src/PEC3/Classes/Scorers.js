@@ -36,7 +36,7 @@ export default class Scorers {
       h2.textContent = 'SCORERS';
       targetDivMainScorers.appendChild(h2);
 
-      //Cabecera primero
+      //Cabecera primero ok
       var theadArray = Object.keys(this.scorers[0]);
       var rowH = document.createElement('tr');
       theadArray.forEach(cabecera => {
