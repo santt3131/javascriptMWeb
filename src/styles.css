@@ -135,7 +135,8 @@ table.team img {
 }
 
 table.standings tr:hover,
-table.scorers tr:hover {
+table.scorers tr:hover,
+#match tr:hover {
   background-color: #eee;
   cursor: pointer;
 }

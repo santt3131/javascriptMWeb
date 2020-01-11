@@ -45,12 +45,6 @@ export async function getScorers() {
 export async function getTeamDetails(teamId) {
   const teamEndpoint = `${ENDPOINTS.TEAM_DETAILS}/${teamId}`;
   const apiData = await getEndpoint(teamEndpoint);
-  console.log('1 llamando APIDATA');
-  console.log(apiData);
-
   const preparedData = prepareTeamDetails(apiData);
-  console.log('2 llamando preparedData');
-  console.log(preparedData);
-
   return new Team(preparedData);
 }

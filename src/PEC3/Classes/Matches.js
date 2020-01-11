@@ -5,9 +5,6 @@ export default class Matches {
 
   logData() {
     console.log(`Matches`);
-    //homeTeam homeScore
-    //awayTeam awayScore
-
     for (const matchDayNumber in this.matches) {
       const matchDayResults = this.matches[matchDayNumber];
 
@@ -83,7 +80,7 @@ export default class Matches {
       }
 
       var valueSelected = select.value;
-      //Segun lo seleccionado pintara
+      //Segun lo seleccionado pintara consola
       var calendario = this.matches[valueSelected];
       calendario.forEach(miCalendario => {
         miCalendario.logData();
@@ -109,9 +106,19 @@ export default class Matches {
       calendario.forEach(rowD => {
         var row = document.createElement('tr');
         Object.keys(rowD).forEach(cellD => {
-          if (cellD !== 'matchDay') {
+          //No agrego matchDay, homeTeamId, awayTeamId , pero pillo sus id
+          // y los pongo en su respectivo nombre
+          if (cellD !== 'matchDay' && cellD !== 'homeTeamId' && cellD !== 'awayTeamId') {
             var cell = document.createElement('td');
             cell.textContent = rowD[cellD];
+            if (cellD === 'homeTeam') {
+              var idTeamHome = rowD['homeTeamId'];
+              cell.setAttribute('data-id', idTeamHome);
+            }
+            if (cellD === 'awayTeam') {
+              var idAwayTeam = rowD['awayTeamId'];
+              cell.setAttribute('data-id', idAwayTeam);
+            }
             row.appendChild(cell);
           }
         });

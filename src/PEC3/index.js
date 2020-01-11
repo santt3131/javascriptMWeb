@@ -15,7 +15,7 @@ export default async function init() {
 
   funcStanding();
 
-  //SCORERS ok
+  //SCORERS okok
   async function funScore() {
     const scorers = await getScorers();
     scorers.logData();
@@ -23,15 +23,19 @@ export default async function init() {
     //var eliminarScore = document.getElementById('spinnerScore');
     //eliminarScore.innerHTML = '';
 
-    ////TEAM DETALLES - STANDINGS  / SCORERS
+    ////TEAM DETALLES - STANDINGS  / SCORERS - CLICK TABLE
     const targetDivMainContent = document.getElementById('content');
     const targetDivMainScorers = document.getElementById('scorers');
     targetDivMainContent.addEventListener('click', seleccionarTeam, false);
     targetDivMainScorers.addEventListener('click', seleccionarTeam, false);
 
-    //MATCHES
+    //MATCHES - CLICK BUTTON
     const buttonMatches = document.getElementById('buttonMatches');
     buttonMatches.addEventListener('click', seleccionarMatches, false);
+
+    //MATCHES - CLICK TABLE
+    const targetDivMatches = document.getElementById('matches');
+    targetDivMatches.addEventListener('click', seleccionarTeam, false);
 
     //STANDINGS TESTING
     const buttonStandings = document.getElementById('buttonStandings');
@@ -48,7 +52,9 @@ export default async function init() {
 
   funScore();
 
-  ////TEAM DETALLES - STANDINGS  / SCORERS
+  //MATCHES - CLICK TABLE
+
+  ////TEAM DETALLES - STANDINGS  / SCORERS  - CLICK TABLE
   async function seleccionarTeam() {
     const teamDetails = await getTeamDetails(event.target.dataset.id);
     teamDetails.logData();

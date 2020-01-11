@@ -44,8 +44,10 @@ export function prepareMatches(data) {
     const preparedData = {
       matchday,
       homeTeam: homeTeam.name,
+      homeTeamId: homeTeam.id,
       homeScore: score.fullTime.homeTeam,
       awayTeam: awayTeam.name,
+      awayTeamId: awayTeam.id,
       awayScore: score.fullTime.awayTeam
     };
 
