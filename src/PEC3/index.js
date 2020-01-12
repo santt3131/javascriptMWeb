@@ -1,5 +1,4 @@
 import { getStandings, getMatches, getScorers, getTeamDetails } from './api';
-import { TEAM_ID } from './config';
 
 export default async function init() {
   //CLASIFICACION
@@ -15,7 +14,7 @@ export default async function init() {
 
   funcStanding();
 
-  //SCORERS okok
+  //SCORERS
   async function funScore() {
     const scorers = await getScorers();
     scorers.logData();

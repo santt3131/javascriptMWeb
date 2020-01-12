@@ -1,8 +1,6 @@
 export default class Team {
   constructor(data) {
     const { team, stadium, website, logo } = data;
-    //const { team, teamId, stadium, website, logo } = data;
-    //this.teamId = teamId;
     this.logo = logo;
     this.team = team;
     this.stadium = stadium;

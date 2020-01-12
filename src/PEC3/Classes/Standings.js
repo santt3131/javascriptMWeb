@@ -52,7 +52,7 @@ export default class Standings {
     }
 
     if (targetDivMainContent.getAttribute('class') === 'isHidden') {
-      targetDivMainContent.setAttribute('class', 'true'); //se cambiara a false porque ya se ha cargado una vez
+      targetDivMainContent.setAttribute('class', 'true');
     }
 
     if (contentMatchG.getAttribute('class') === 'true') {
