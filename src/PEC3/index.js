@@ -34,14 +34,6 @@ export default async function init() {
     buttonMatches.addEventListener('click', seleccionarMatches, false);
 
     //MATCHES - CLICK TABLE
-    //si esta la tabla envio el evento , es decir si ya selecciono el dropdown
-    /*
-    const targetDivMatches = document.getElementById('matches');
-    if ( document.getElementById('match')){
-    targetDivMatches.addEventListener('click', seleccionarTeam, false); //testing
-  }
-    */
-
     const targetDivMatches = document.getElementById('matches');
     targetDivMatches.addEventListener('click', seleccionarTeam, false); //testing
 

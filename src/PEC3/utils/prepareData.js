@@ -21,7 +21,7 @@ function filterStandings(standings) {
         draw,
         goalsFor,
         goalsAgainst,
-        teamId: team.id // SE DEBERIA OCULTAR
+        teamId: team.id
       };
     });
   });

@@ -44,14 +44,16 @@ export default class Team {
     //Agrego los demás td
     var row = document.createElement('tr');
     Object.values(this).forEach(element => {
-      if (element.slice(-4) == '.svg' || element.slice(-4) == '.png') {
-        var img = document.createElement('img');
-        img.src = element;
-        row.appendChild(img);
-      } else {
-        var cell = document.createElement('td');
-        cell.textContent = element;
-        row.appendChild(cell);
+      if (element) {
+        if (element.slice(-4) == '.svg' || element.slice(-4) == '.png') {
+          var img = document.createElement('img');
+          img.src = element;
+          row.appendChild(img);
+        } else {
+          var cell = document.createElement('td');
+          cell.textContent = element;
+          row.appendChild(cell);
+        }
       }
     });
     tbody.appendChild(row);
