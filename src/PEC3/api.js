@@ -42,9 +42,37 @@ export async function getScorers() {
   return new Scorers(preparedData);
 }
 
+var myArrayTeamDetails = [0];
+
+function busquedadElement(id) {
+  var resultado = false;
+  for (const element of myArrayTeamDetails) {
+    //si el elemento esta en el array
+    if (element.id === id) {
+      return element;
+    }
+  }
+
+  return resultado;
+}
+
 export async function getTeamDetails(teamId) {
-  const teamEndpoint = `${ENDPOINTS.TEAM_DETAILS}/${teamId}`;
-  const apiData = await getEndpoint(teamEndpoint);
-  const preparedData = prepareTeamDetails(apiData);
-  return new Team(preparedData);
+  var resultadoBusquedad = busquedadElement(teamId);
+  if (resultadoBusquedad === false || resultadoBusquedad === undefined) {
+    const teamEndpoint = `${ENDPOINTS.TEAM_DETAILS}/${teamId}`;
+    const apiData = await getEndpoint(teamEndpoint);
+    const preparedData = prepareTeamDetails(apiData);
+
+    var objTeamDetails = {
+      id: teamId,
+      logo: preparedData.logo,
+      team: preparedData.team,
+      stadium: preparedData.stadium,
+      website: preparedData.website
+    };
+    myArrayTeamDetails.push(objTeamDetails);
+    return new Team(preparedData);
+  } else {
+    return new Team(resultadoBusquedad);
+  }
 }

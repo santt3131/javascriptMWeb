@@ -50,7 +50,6 @@ export default async function init() {
     buttonStandings.addEventListener(
       'click',
       function() {
-        console.log('presionando standings');
         funcStanding();
         funScore();
       },
@@ -62,7 +61,6 @@ export default async function init() {
 
   ////TEAM DETALLES - STANDINGS  / SCORERS  - CLICK TABLE
   async function seleccionarTeam() {
-    console.log('seleccionando');
     const teamDetails = await getTeamDetails(event.target.dataset.id);
     teamDetails.logData();
     teamDetails.renderData();
@@ -73,19 +71,4 @@ export default async function init() {
     const matches = await getMatches();
     matches.renderData();
   }
-
-  /* 
-  PREGUNTA
-  -------
-  salio un problema de asincronia cuando tenia mi total standings 
-  y scorers con el callback 
-  por ejemplo :
-  const targetDivMainContent = document.getElementById("content");
-  targetDivMainContent.addEventListener("click", seleccionarTeam, false);
-
-  El mensaje era : 'addEventListener' of null, es decir mi targetDivMainContent estaba
-  recibiendo a null porque se estaba ejecutando antes el renderizado y recibia null,
-  para solucionarlo (aunque no lo veo correcto esteticamente) lo he puesto en el 
-  callback del score . ¿Alguna solucion más optima o estetica?
- */
 }
